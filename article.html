@@ -1,0 +1,86 @@
+<div class="p-5">
+
+    <ol class="nav justify-content-center">
+
+        <li class="nav-item" ng-repeat="topic in topics ">
+
+            <a class="nav-link" ng-click="showTopic(topic)">{{ topic }}</a>
+
+        </li>
+
+    </ol>
+
+
+
+    <section class="jumbotron bg-white">
+
+        <h2 class=" display-4 text-center">{{ newsSource }}</h2>
+
+    </section>
+
+    <section class="row">
+
+        <div class="col-sm-12 col-lg-7">
+
+            <section class="card w-100 mx-auto mb-4" ng-if="article.description" ng-repeat="article in articles">
+
+                <img ng-src="{{ article.urlToImage }}" class="card-img-top" alt="">
+
+                <div class="card-body">
+
+                    <p class="card-text"><small class="">{{ article.source.name }} </small></p>
+
+
+                    <h4 class="card-title">{{ article.title }}</h4>
+
+
+                    <p ng-show="article.author" class="card-text text-muted">By: {{ article.author }}</p>
+
+                    <p class="card-text">{{ article.description }}</p>
+
+                    <a class="btn btn-outline-secondary" ng-href="{{ article.url }}">Contiue reading</a>
+
+                </div>
+
+                <hr>
+
+            </section>
+
+        </div>
+
+        <div class="col-sm-12 col-lg-5">
+
+            <aside>
+
+                <div class="container">
+
+                    <h3>Top {{ newsSource }} picks:</h3>
+
+                    <ul class="list-group list-group-flush" ng-repeat="post in topPosts">
+
+                        <a ng-href="{{ post.url }}" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{ post.title }}</h5>
+                            </div>
+                            <p class="mb-1">{{ post.description }}</p>
+                            <div class="d-flex w-100 justify-content-between">
+                                <small class="text-muted">{{ post.author }}</small>
+                                <small class="text-muted">3 days ago</small>
+
+                            </div>
+                        </a>
+                    </ul>
+
+
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+
+</div>

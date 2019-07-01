@@ -1,0 +1,15 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "News application using the newsApi",
+  "main": "appscript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Devin Thomas",
+  "license": "ISC",
+  "dependencies": {
+    "angular-ui-grid": "^4.8.1",
+    "animate.js": "^1.4.1"
+  }
+}
